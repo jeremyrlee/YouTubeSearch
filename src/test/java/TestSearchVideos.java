@@ -24,6 +24,22 @@ public class TestSearchVideos {
     public void tearDown() { driver.quit(); }
 
     /**
+     * validateTitle searches for the Rick Atsley video Never Gonna Give You Up, and checks that the title matches the
+     * expected result.
+     */
+    @Test
+    public void validateTitle() {
+        Home home = new Home(driver);
+        home.searchVideo("Never Gonna Give You Up");
+
+        SearchResults results = new SearchResults(driver);
+        results.openVideo("Rick Astley - Never Gonna Give You Up (Video)");
+
+        Video video = new Video(driver);
+        Assert.assertEquals("Rick Astley - Never Gonna Give You Up (Video)", video.getTitle());
+    }
+
+    /**
      * validateDescription searches for the Rick Astley video Never Gonna Give You Up, and checks that the description
      * matches an expected result.
      */
