@@ -2,7 +2,14 @@ import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ValidateDescription {
+/**
+ * TestSearchVideos contains tests that involve searching for YouTube videos.
+ *
+ * @author Jeremy Lee
+ * @version 1.0
+ */
+
+public class TestSearchVideos {
 
     private static WebDriver driver;
 
@@ -16,7 +23,10 @@ public class ValidateDescription {
     @After
     public void tearDown() { driver.quit(); }
 
-
+    /**
+     * validateDescription searches for the Rick Astley video Never Gonna Give You Up, and checks that the description
+     * matches an expected result.
+     */
     @Test
     public void validateDescription() {
         Home home = new Home(driver);

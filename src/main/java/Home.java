@@ -4,6 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/**
+ * Home is used for any actions related to the YouTube homepage.
+ *
+ * @author Jeremy Lee
+ * @version 1.0
+ */
+
 public class Home {
     private WebDriver driver;
     private By searchField;
@@ -15,6 +22,10 @@ public class Home {
         searchButton = By.id("search-icon-legacy");
     }
 
+    /**
+     * Enters a given string into the search bar, and searches YouTube for relevant videos.
+     * @param search the keywords that will be searched for on YouTube
+     */
     public void searchVideo(String search) {
         driver.findElement(searchField).sendKeys(search);
         driver.findElement(searchButton).click();
